@@ -1,0 +1,39 @@
+<h1 class="head m-5">Event Binding</h1>
+
+<div class="row">
+
+  <div class="col m-4">
+
+    <div class="card ">
+      <div class="card-header"><b>Data From</b></div>
+      <div (dragstart)="drag($event)" (dragover)="$event.preventDefault()" (drop)="dropTo($event)" id="from"
+        class="card-body">
+
+        <ul class="list-group">
+          <li class="list-group-item" draggable="true" *ngFor="let item of listFrom">{{item}}</li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- From End -->
+  </div>
+  <!-- Col End -->
+  <div class="col m-4 ">
+
+    <div class="card ">
+      <div class="card-header"><b>Data To</b></div>
+      <div (dragover)="$event.preventDefault()" (drop)="drop($event)" id="to" class="card-body">
+
+
+        <ul class="list-group">
+          <li draggable="true" class="list-group-item" (dragstart)="dragTo($event)" draggable="true"
+            *ngFor="let item of listTo">{{item}}</li>
+        </ul>
+
+      </div>
+    </div>
+    <!-- To End -->
+  </div>
+  <!-- Col End -->
+
+</div>
