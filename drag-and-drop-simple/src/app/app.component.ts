@@ -17,9 +17,7 @@ export class AppComponent {
     console.log(this.dragValue)
   }
 
-  // To add data from from list to to list
-  //  To cut data from list
-
+  
   drop(event: any) {
     if (event.target.id == 'to' && this.dragValue) {
       this.listTo.push(this.dragValue);
